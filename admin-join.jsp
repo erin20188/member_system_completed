@@ -1,0 +1,223 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.ArrayList"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <html>
+    <head lang="en">
+    <meta charset="UTF-8">
+    <title>管理员--确认商家入盟管理</title>
+    <link rel="stylesheet" href="css/myCss.css"/>
+    <link rel="stylesheet" href="Font-Awesome-3.2.1/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/admin-main.css"/>
+    <link rel="stylesheet" href="css/admin-news.css"/>
+    <script type="text/javascript">
+    function  toUpdate(obj1, obj2) {
+    var name,retn;
+    //sId = document.getElementById("jspSID_" + obj1).value;
+    name = document.getElementById("jspcompName_" + obj1).value;
+    //born = document.getElementById("jspBorn_" + obj1).value;
+    retn = confirm("确认商家入盟吗?");
+    if(retn)
+    {          window.location = "comfirmmerchantServlet?name=" + name +"&&currentPage=" + obj2;
+    }
+    }
+    </script>
+    </head>
+    <body>
+    <div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-header">
+    <img src="img/logo.jpg" alt="" class="navbar-brand"/>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+    <li class="nav-item active">
+    <a class="nav-link" href="admin-home.html">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Features</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Pricing</a>
+    </li>
+    </ul>
+    </div>
+    </nav>
+    </div>
+    <div class="container">
+    <div class="content row">
+    <div class="col-md-2">
+    <div class="nav nav-pills flex-column block">
+    <li class="nav-header">
+    申请入盟商家列表
+    </li>
+    </div>
+    <div class="block">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda debitis dolor ipsam iusto perspiciatis quis sequi ullam. Autem, culpa debitis id
+    nostrum nulla quos tempore vitae! Recusandae, sequi, voluptates.
+    </div>
+    </div>
+    <div class="col-md-10">
+        <%
+            /*currentPage : 当前页号 ，count ：记录的总数目 ，pageCount ：总页数 ,
+            *i ： 数组元素的下标，用于遍历数组元素；
+            */
+            Integer currentPage = 1, count = 0, pageCount = 1, i = 0;
+            ArrayList<com.qicaiyun.beans.Merchant> jspStudentList = null;
+            String classify,addre,compName,phonenumber,startLevel,prpor;
+            %>
+    <!--调用FenYeServlet-->
+    <form action="manageragreeservlet" id="frm" style="display: inline;">
+    <div>
+    <!--从request中提取值-->
+        <%
+                    try {
+                    //获取当前页号
+                    currentPage = (Integer) request.getAttribute("currentPage");
+                    //获取记录总数
+                    count = (Integer) request.getAttribute("count");
+                    //获取接收到的request中的学生记录列表
+                    jspStudentList = (java.util.ArrayList<com.qicaiyun.beans.Merchant>) request
+                    .getAttribute("MerchantList");
+                    if (currentPage.equals(null)) {
+                    currentPage = 1;
+                    }
+                    if (count.equals(null)) {
+                    count = 0;
+                    }
+                    pageCount = count / 3 + 1;
+                    %>
+    <table border="1" cellspacing="0" cellpadding="0" >
+    <!--表头-->
+    <thead align="center">
+    <tr>
+    <th>行业类别</th>
+    <th>地址</th>
+    <th>公司名称</th>
+    <th>电话</th>
+    <th>星级</th>
+    <th>比例</th>
+    <th>确认</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--提取数组元素属性值-->
+        <%
+                        //提取数组元素;第一个数组元素的下标是零,最后一个元素的下标是 (count - 1)
+                        for (i = (currentPage - 1) * 3; i < currentPage * 3; i++) {
+                        if (i > (count - 1)) {
+                        break;
+                        }
+                        //提取数组元素的属性值；jspStudentList.get(i)提取第i+1个元素
+                        classify=jspStudentList.get(i).getClassify();
+                        addre=jspStudentList.get(i).getAddr();
+                        compName=jspStudentList.get(i).getCompName();
+                        phonenumber=jspStudentList.get(i).getPhonenumber();
+                        startLevel=jspStudentList.get(i).getStartLevel();
+                        prpor=jspStudentList.get(i).getPrpor();
+
+                        %>
+    <!--显示属性值-->
+    <tr>
+    <!--  透明的文本框: style="background-color: transparent; border: 0px" -->
+    <td  id="jspclassify_<%=i%>">
+        <%=classify%>
+
+    </td>
+    <td id="jspaddre_<%=i%>">
+        <%=addre%>
+    </td>
+    <td id="jspcompName_<%=i%>">
+        <%=compName%></td>
+    <td id="jspphonenumber_<%=i%>">
+        <%=phonenumber%>
+    </td>
+    <td id="jspstartLevel_<%=i%>">
+        <%=startLevel%>
+    </td>
+    <td id="jsppprpor_<%=i%>">
+        <%=prpor%>
+    </td>
+    <td>
+    <input type="button" name="agree" id="btn-sure" value="同意入盟"
+    onclick="toUpdate(<%=i%>,<%=currentPage%>);" >
+    </td>
+    </tr>
+
+        <%
+                        }
+                        %>
+    </tbody>
+    </table>
+    <!-- 底部-->
+        <%
+                    //输出currentPage , count , pageCount , i  ;
+                    out.println("currentPage=" + currentPage + ",count=" + count
+                    + ",pageCount=" + pageCount);
+                    if (currentPage == 1) {
+                    %>
+    <span class="unuse">[First]</span> <span class="unuse">[L]</span>
+        <%
+                    } else {
+                    %>
+    <span><a href="manageragreeservlet?currentPage=1">[First]</a> </span>
+    <span><a href="manageragreeservlet?currentPage=<%=currentPage - 1%>">[L]</a> </span>
+        <%
+                    }
+                    }//匹配<!--从request中提取值-->处得try
+                    catch (Exception e) {
+                    System.err.println(this.getClass() + "发生异常:"
+                    + e.getLocalizedMessage());
+                    e.printStackTrace();
+                    throw new Exception(this.getClass() + "发生异常.");
+                    }
+                    %>
+        <%
+                    for (i = 1; i <= pageCount; i++) {
+                    if (i == currentPage) {
+                    %>
+    <span class="currentPage"><%=i%></span>
+        <%
+                    } else {
+                    %>
+    <span><a href="manageragreeservlet?currentPage=<%=i%>"><%=i%></a>
+    </span>
+        <%
+                    }
+                    }
+                    %>
+        <%
+                    if (currentPage == pageCount) {
+                    %>
+    <span class="unuse">[>]</span> <span class="unuse">[FINAL]</span>
+        <%
+                    } else {
+                    %>
+    <span><a
+    href="manageragreeservlet?currentPage=<%=currentPage + 1%>">[>]</a> </span> <span><a
+    href="manageragreeservlet?currentPage=<%=pageCount%>">[FINAL]</a> </span>
+        <%
+                    }
+                    %>
+    <select ="currentPage">
+        <%
+                    for (i = 1; i <= pageCount; i++) {
+                    %>
+    <option value="<%=i%>" >
+        <%=i%>
+    </option>
+        <%
+                    }
+                    %>
+    </select> <input type="submit" Id="jspButn" value="跳转" />
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <div class="footer"></div>
+    <script src="Jquery/jquery.js"></script>
+    </body>
+    </html>

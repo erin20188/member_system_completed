@@ -1,0 +1,421 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+        <link type="text/css" rel="stylesheet" href="Font-Awesome-3.2.1/css/font-awesome.css">
+        <link type="text/css" rel="stylesheet" href="css/merchant-detail.css">
+        <link type="text/css" rel="stylesheet" href="css/merchant-center-template.css">
+        <link type="text/css" rel="stylesheet" href="css/merchant-center.css">
+        <script type="text/javascript">
+     
+        </script>
+    </head>
+    <body>
+        <div id="navigator">
+            <nav>
+                <div class="nav-all">
+                    <div class="nav-logo">
+                        <img src="/penguin.jpg" alt="LOGO" />
+                    </div>
+                    <div class="nav-input">
+                        <div class="nav-search">
+                            <div class="nav-icon">
+                                <i class="icon-search"></i>
+                            </div>
+                            <div class="nav-text">
+                                <input type="text" class="inp" autocomplete="off" placeholder="搜索" value>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-nav">
+                        <ul class="nav-ul">
+                            <li class="nav-li">
+                                <div class="nav-btn">
+                                    <a href="/home" class="nav-word">
+                                        <div class="nav-font-box">
+                                            <div class="nav-font">首页</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-li">
+                                <div class="nav-btn">
+                                    <a href="/signup" class="nav-word">
+                                        <div class="nav-font-box">
+                                            <div class="nav-font">注册</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-li">
+                                <div class="nav-btn">
+                                    <a href="/login" class="nav-word">
+                                        <div class="nav-font-box">
+                                            <div class="nav-font">登录</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <main id="site-content">
+            <div style="margin-bottom:16px">
+                <div>
+                    <!--<img src="littlepine.jpg" class="rounded mx-auto d-block" alt="Responsive image" style="height: 400px; width: auto;">-->
+                    <div id="carouselExampleControls" class="carousel slide bgc-w" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block header-photo" src="lp2.jpg" alt="First slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block header-photo" src="lp2.jpg" alt="Second slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    <div aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#">首页</a></li>
+                          <li class="breadcrumb-item" name="detail-city"><a href="#"><%%></a></li>
+                          <li class="breadcrumb-item" name="detail-category"><a href="#"><%%></a></li>
+                          <li class="breadcrumb-item" name="detail-type"><a href="#"><%%></a></li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h1 name="detail-name"></h1>
+                        <h6 name="detail-commetNumber"><%%>条点评</h6>
+                    </div>
+                    <div>
+                        <span style="font-family: Microsoft YaHei; font-size: 10;">人均：</span>
+                        <span style="font-family: Microsoft YaHei; font-size: 8;" name="detail-percapita">￥<%%></span>
+                    </div>
+                    <div>
+                        <span style="font-family: Microsoft YaHei; font-size: 10;">地址：</span>
+                        <span style="font-family: Microsoft YaHei; font-size: 8;" name="detail-location"><%%></span>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <h4 style="font-family: Microsoft YaHei;">简介</h4>
+                        <div name="detail=introduction"><%%></div>
+                    <div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">详细信息</th>
+                                    <th scope="col"> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                              
+                                 <%
+                                 
+                                 /* if(" ".equals(name))
+                                 {
+                                	 name=null;
+                                 } */
+                                 
+                                 %>
+                               <form action="" >
+                               <input type="hidden" >
+                               </form> 
+                                    <th scope="row">电话</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scopr="row">微信</th>
+                                    <!-- <!--  --><!-- <!--  --> --> --><td><%%></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">交通</th>
+                                    <td><%%></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">支付</th>
+                                    <td><%%></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h4 style="font-family: Microsoft Yahei;">产品信息</h4>
+                        <div>
+                            <div class="product-restaurant">
+                                <form action="foodseparateServlet" id="frm-hotel" style="display: inline;">
+                                    <div>
+                                    
+                                    </form>
+                                        <!--从request中提取值-->
+                                        <%%>
+                                        <table class="table table-responsive">
+                                            <!--表头-->
+                                            <thead align="center">
+                                                <tr>
+                                                    <th>房间编号</th>
+                                                    <th>房间名称</th>
+                                                    <th>房内床型</th>
+                                                    <th>房间类型</th>
+                                                    <th>入住人数</th>
+                                                    <th>平日价格</th>
+                                                    <th>会员价格</th>
+                                                    <th>房间简介</th>
+                                                    <th>库存数量</th>
+                                                    <th>是否可用</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--提取数组元素属性值-->
+                                                <%%>
+                                                <!--显示属性值-->
+                                                <tr>
+                                                    <!-- 透明的文本框: style="background-color: transparent; border: 0px"-->
+                                                    <td><div id="HID" name="id" class="tb-item"><%%></div></td>
+                                                    <td><div id="HProductName" name="productName" class="tb-item"><%%></div></td>
+                                                    <td><div id="HBed" name="bedType" class="tb-item"><%%></td>
+                                                    <td><div id="HRoom" name="roomType" class="tb-item"><%%></td>
+                                                    <td><div id="HPerson" name="person" class="tb-item"><%%></td>
+                                                    <td><div id="HWeekdayPrice" name="productPrice" class="tb-item"><%%></td>
+                                                    <td><div id="HMemberPrice" name="productMemberPrice" class="tb-item"><%%></td>
+                                                    <td><div id="HIntroduction" name="productIntroduction" class="tb-item"><%%></td>
+                                                    <td><div id="HStorage" name="storage" class="tb-item"><%%></td>
+                                                    <td><div id="HAvailable" name="availableState" class="tb-item"><%%></td>
+                                                </tr>
+                                                <%%>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="product-restaurant">
+                                            <form action="separateServlet" id="frm-restaurant" style="display: inline;">
+                                                <div>
+                                                    <!--从request中提取值-->
+                                                    <%%>
+                                                    <table id="hotel-table" class="table table-responsive">
+                                                        <!--表头-->
+                                                        <thead align="center">
+                                                            <tr>
+                                                                <th>菜品编号</th>
+                                                                <th>菜品名称</th>
+                                                                <th>菜品类型</th>
+                                                                <th>平日价格</th>
+                                                                <th>会员价格</th>
+                                                                <th>菜品简介</th>
+                                                                <th>库存数量</th>
+                                                                <th>是否可用</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!--提取数组元素属性值-->
+                                                            <%%>
+                                                            <!--显示属性值-->
+                                                            <tr>
+                                                                <!-- 透明的文本框: style="background-color: transparent; border: 0px"-->
+                                                                <td><div id="RID" name="id" class="tb-item"><%%></div></td>
+                                                                <td><div id="RProductName" name="foodName" class="tb-item"><%%></td>
+                                                                <td><div id="RType" name="foodType" class="tb-item"><%%></td>
+                                                                <td><div id="RWeekdayPrice" name="foodPrice" class="tb-item"><%%></td>
+                                                                <td><div id="RMemberPrice" name="foodMemberPrice" class="tb-item"><%%></td>
+                                                                <td><div id="RIntroduction" name="foodIntroduction" class="tb-item"><%%></td>
+                                                                <td><div id="RStorage" name="storage" class="tb-item"><%%></td>
+                                                                <td><div id="RAvailable" name="availableState" class="tb-item"><%%></td>
+                                                            </tr>
+                                                            <%%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="product-shop">
+                                            <form action="separateServlet" id="frm-shop" style="display: inline;">
+                                                <div>
+                                                    <!--从request中提取值-->
+                                                    <%%>
+                                                    <table id="shop-table" class="table table-responsive">
+                                                        <!--表头-->
+                                                        <thead align="center">
+                                                            <tr>
+                                                                <th>商品编号</th>
+                                                                <th>商品名称</th>
+                                                                <th>商品类型</th>
+                                                                <th>平日价格</th>
+                                                                <th>会员价格</th>
+                                                                <th>商品简介</th>
+                                                                <th>库存数量</th>
+                                                                <th>是否可用</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!--提取数组元素属性值-->
+                                                            <%%>
+                                                            <!--显示属性值-->
+                                                            <tr>
+                                                                <!-- 透明的文本框: style="background-color: transparent; border: 0px"-->
+                                                                <td><div id="SID" name="id" class="tb-item"><%%></div></td>
+                                                                <td><div id="SProductName" name="productName" class="tb-item"><%%></td>
+                                                                <td><div id="SType" name="productType" class="tb-item"><%%></td>
+                                                                <td><div id="SWeekdayPrice" name="productPrice" class="tb-item"><%%></td>]
+                                                                <td><div id="SMemberPrice" name="productMemberPrice" class="tb-item"><%%></td>
+                                                                <td><div id="SIntroduction" name="productIntroduction" class="tb-item"><%%></td>
+                                                                <td><div id="SStorage" name="storage" class="tb-item"><%%></td>
+                                                                <td><div id="SAvailable" name="availableState" class="tb-item"><%%></td>
+                                                            </tr>
+                                                            <%%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="product-entertainment">
+                                            <form action="separateServlet" id="frm-entertainment" style="display: inline;">
+                                                <div>
+                                                    <!--从request中提取值-->
+                                                    <%%>
+                                                    <table id="entertainment-table" class="table table-responsive">
+                                                        <!--表头-->
+                                                        <thead align="center">
+                                                            <tr>
+                                                                <th>项目编号</th>
+                                                                <th>项目名称</th>
+                                                                <th>项目类型</th>
+                                                                <th>平日价格</th>
+                                                                <th>会员价格</th>
+                                                                <th>项目时长</th>
+                                                                <th>项目场地</th>
+                                                                <th>预约信息</th>
+                                                                <th>项目简介</th>
+                                                                <th>库存数量</th>
+                                                                <th>是否可用</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!--提取数组元素属性值-->
+                                                            <%%>
+                                                            <!--显示属性值-->
+                                                            <tr>
+                                                                <!-- 透明的文本框: style="background-color: transparent; border: 0px"-->
+                                                                <td><div id="EID" name="id" class="tb-item"><%%></div></td>
+                                                                <td><div id="EProductName" name="entertainName" class="tb-item"><%%></td>
+                                                                <td><div id="EType" name="entertainType" class="tb-item"><%%></td>
+                                                                <td><div id="EWeekdayPrice" name="entertainPrice" class="tb-item"><%%></td>
+                                                                <td><div id="EMemberPrice" name="entertainMemberPrice" class="tb-item"><%%></td>
+                                                                <td><div id="ETimespan" name="entertainTime" class="tb-item"><%%></td>
+                                                                <td><div id="ELocation" name="entertainPlace" class="tb-item"><%%></td>
+                                                                <td><div id="EReservation" name="reservationInformation" class="tb-item"><%%></td>
+                                                                <td><div id="EIntroduction" name="entertainIntroduction" class="tb-item"><%%></td>
+                                                                <td><div id="EStorage" name="storage" class="tb-item"><%%></td>
+                                                                <td><div id="EAvailable" name="availableState" class="tb-item"><%%></td>
+                                                            </tr>
+                                                            <%%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="product-travel">
+                                            <form action="separateServlet" id="frm-travel" style="display: inline;">
+                                                <div>
+                                                    <!--从request中提取值-->
+                                                    <%%>
+                                                    <table id="travel-table" class="table table-responsive">
+                                                        <!--表头-->
+                                                        <thead align="center">
+                                                            <tr>
+                                                                <th>项目编号</th>
+                                                                <th>项目名称</th>
+                                                                <th>项目类型</th>
+                                                                <th>平日价格</th>
+                                                                <th>会员价格</th>
+                                                                <th>项目时长</th>
+                                                                <th>项目场地</th>
+                                                                <th>预约信息</th>
+                                                                <th>保险信息</th>
+                                                                <th>开始时间</th>
+                                                                <th>结束时间</th>
+                                                                <th>项目简介</th>
+                                                                <th>项目图片</th>
+                                                                <th>库存数量</th>
+                                                                <th>是否可用</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!--提取数组元素属性值-->
+                                                            <%%>
+                                                            <!--显示属性值-->
+                                                            <tr>
+                                                                <!-- 透明的文本框: style="background-color: transparent; border: 0px"-->
+                                                                <td><div id="TID" name="id" class="tb-item"><%%></div></td>
+                                                                <td><div id="TProductName" name="travelName" class="tb-item"><%%></td>
+                                                                <td><div id="TType" name="travelType" class="tb-item"><%%></td>
+                                                                <td><div id="TWeekdayPrice" name="travelPrice" class="tb-item"><%%></td>
+                                                                <td><div id="TMemberPrice" name="travelMemberPrice" class="tb-item"><%%></td>
+                                                                <td><div id="TTimespan" name="travelTime" class="tb-item"><%%></td>
+                                                                <td><div id="TLocation" name="travelPlace" class="tb-item"><%%></td>
+                                                                <td><div id="TReservation" name="reservationInformation" class="tb-item"><%%></td>
+                                                                <td><div id="TInsurance" name="insurance" class="tb-item"><%%></td>
+                                                                <td><div id="TStart" name="startTime" class="tb-item"><%%></td>
+                                                                <td><div id="TEnd" name="endTime" class="tb-item"><%%></td>
+                                                                <td><div id="TIntroduction" name="travelIntroduction" class="tb-item"><%%></td>
+                                                                <td><div id="TStorage" name="storage" class="tb-item"><%%></td>
+                                                                <td><div id="TAvailable" name="availableState" class="tb-item"><%%></td>
+                                                            </tr>
+                                                            <%%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 style="font-family: Microsoft Yahei;">用户评价</h4>
+                                        <div class="detail-comment">
+                                            <form action="separateServlet" id="frm-comment" style="display: inline;">
+                                                <div>
+                                                    <!--从request中提取值-->
+                                                    <%%>
+                                                    <table class="table table-responsive">
+                                                        <!--表头-->
+                                                        <thead align="center">
+                                                            <tr>
+                                                                <th>用户名称</th>
+                                                                <th>用户反馈</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!--提取数组元素属性值-->
+                                                            <%%>
+                                                            <!--显示属性值-->
+                                                            <tr>
+                                                                <!-- 透明的文本框: style="background-color: transparent; border: 0px"-->
+                                                                <td><div id="UserID" name="UID" class="tb-item"><%%></div></td>
+                                                                <td><div id="UserComment" name="UComment" class="tb-item"><%%></div></td>
+                                                                
+                                                            </tr>
+                                                            <%%>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                        
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

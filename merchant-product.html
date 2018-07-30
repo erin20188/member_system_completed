@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="css/myCss.css">
+        <link type="text/css" rel="stylesheet" href="Font-Awesome-3.2.1/css/font-awesome.css">
+        <link type="text/css" rel="stylesheet" href="indie-mcenter.css">
+        <link type="text/css" rel="stylesheet" href="indie-mproduct.css"> 
+        <link type="text/css" rel="stylesheet" href="Bootstrap-Table/src/bootstrap-table.css">
+        </head>
+    <body>
+        <div class="container container-indie">
+            <div class="row">
+                <div class="col-l nav nav-pills flex-column">
+                    <li class="nav-header">商家中心</li>
+                    <a href="#"><li class="nav-item" id="mcent-home"><i class="icon-home"></i><span>首页</span></li></a>
+                    <a href="#"><li class="nav-item" id="mcent-info"><i class="icon-info"></i><span>商家信息</span></li></a>
+                    <a href="#"><li class="nav-item" id="mcent-picture"><i class="icon-picture"></i><span>图片展示</span></li></a>
+                    <a href="#" class="a-present"><li class="nav-item" id="mcent-product"><i class="icon-suitcase"></i><span>产品资料</span></li></a>
+                    <a href="#"><li class="nav-item" id="mcent-event"><i class="icon-calendar"></i><span>活动设置</span></li></a>
+                    <a href="#"><li class="nav-item" id="mcent-password"><i class="icon-key"></i><span>修改密码</span></li></a>
+                    <a href="#"><li class="nav-item last-item" id="mcent-review"><i class="icon-pencil"></i><span>意见反馈</span></li></a>
+                </div>
+                <div id="mContent" class="col-r">
+                    <div id="mHomepage" name="mHomepage">
+                        <div class="page-block">
+                            待制作
+                        </div>
+                    </div>
+                    <div id="mInfopage" name="mInfopage">
+                        <div class="page-block">
+
+                        </div>
+                    </div>
+                    <div id="mPicpage" name="mPicpage">
+                        <div class="page-block">
+
+                        </div>
+                    </div>
+                    <div id="mProductpage" name="mProductpage">
+                        <div class="page-block">
+                            <div class="product-list">
+                                <div id="mhotel" name="mhotel" class="product-hotel">
+                                    <form action="separateServlet" id="frm" style="display: inline;">
+                                        <div>
+                                            <!--从request中提取值-->
+                                            <%%>
+                                            <table id="hotel-table" name="hotel-table">
+                                                <!--表头-->
+                                                <thead align="center">
+                                                    <tr>
+                                                        <th>编号</th>
+                                                        <th>品名</th>
+                                                        <th>床型</th>
+                                                        <th>房型</th>
+                                                        <th>人数</th>
+                                                        <th>设施</th>
+                                                        <th>价格</th>
+                                                        <th>简介</th>
+                                                        <th>照片</th>
+                                                        <th colspan="2">操作</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!--提取数组元素属性值-->
+                                                    <%%>
+                                                    <!--显示属性值-->
+                                                    <tr>
+                                                        <!-- 透明的文本框: style="background-color: transparent; border: 0px"-->
+                                                        <td><input type="text" id="jspSID_<%=i%>" value="<%=sId%>" class="hotel-text"/></td>
+                                                        <td><input type="text" id="jspName_<%=i%>" value="<%=name%>" class="hotel-text"/></td>
+                                                        <td><input type="text" id="jspBed_<%=i%>" value="<%=bed%>" class="hotel-text"/></td>
+                                                        <td><input type="text" id="jspRoom_<%=i%>" value="<%=room%>" class="hotel-text"/></td>
+                                                        <td><input type="text" id="jspPerson_<%=i%>" value="<%=person%>" class="hotel-text"/></td>
+                                                        <td><input type="text" id="jspEqpmnt_<%=i%>" value="<%=eqpmnt%>" class="hotel-text"/></td>
+                                                        <td><input type="text" id="jspPrice_<%=i%>" value="<%=price%>" class="hotel-text"/></td>
+                                                        <td><textarea name="jspSpec" id="jspSpec_<%=i%>" class="hotel-textarea" rows="1" cols="10"><%=spec%></textarea>
+                                                        <td><img alt="可能尚未上传照片" align="middle" src="photo/<%=photo%>" width="50" height="50"/></td>
+                                                        <td><input type="button" name="jspUpdBtn" value="更改" onclick="toUpdate(<%=i%>,<%=currentPage%>);"/></td>
+                                                        <td><input type="button" name="jspDelBtn" value="删除" onclick="toDel(<%=i%>,<%=currentPage%>);"></td>
+                                                    </tr>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </tbody>
+                                            </table>
+                                            <!-- 底部-->
+                                            <%
+                                                
+                                            %>
+                                            <span class="unuse">[第一页]</span> <span class="unuse">[上一页]</span>
+                                            <%
+                                                } else {
+                                            %>
+                                            <span><a href="separateServlet?currentPage=1">[第一页]</a> </span> 
+                                            <span><a href="separateServlet?currentPage=<%=currentPage - 1%>">[上一页]</a> </span>
+                                            <%
+                                            
+                                            %>
+                                            <span class="currentPage"><%=i%></span>
+                                            <%
+                                                } else {
+                                            %>
+                                            <span><a href="separateServlet?currentPage=<%=i%>"><%=i%></a>
+                                            </span>
+                                            <%
+                                                }
+                                                }
+                                            %>
+                                            <%
+                                                if (currentPage == pageCount) {
+                                            %>
+                                            <span class="unuse">[下一页]</span> <span class="unuse">[最后一页]</span>
+                                            <%
+                                                } else {
+                                            %>
+                                            <span><a
+                                                href="separateServlet?currentPage=<%=currentPage + 1%>">[下一页]</a> </span> <span><a
+                                                href="separateServlet?currentPage=<%=pageCount%>">[最后一页]</a> </span>
+                                            <%
+                                                }
+                                            %>
+                                            <select name="currentPage">
+                                                <%
+                                                    for (i = 1; i <= pageCount; i++) {
+                                                %>
+                                                <option value="<%=i%>" >
+                                                    <%=i%>
+                                                </option>
+                                                <%
+                                                    }
+                                                %>
+                                            </select> <input type="submit" name="jspGo" value="去" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                    <div id="mEventpage" name="mEventpage">
+                        <div class="page-block">
+
+                        </div>
+                    </div>
+                    <div id="mPwdpage" name="mPwdpage">
+                        <div class="page-block">
+                            <div class="pwd-block">
+                                <div class="pwd-item">原密码</div>
+                                <input id="oldPwd" name="oldPwd" class="pwd-input" placeholder="输入6到16位密码">
+                            </div>
+                            <div class="pwd-block">
+                                <div class="pwd-item">新密码</div>
+                                <input id="newPwd" name="newPwd" class="pwd-input" placeholder="输入6到16位密码">
+                            </div>
+                            <div class="pwd-block">
+                                <div class="pwd-item">确认密码</div>
+                                <input id="checkPwd" name="checkPwd" class="pwd-input" placeholder="输入6到16位密码">
+                            </div>
+                            <div class="pwd-block">
+                                <button id="pwd-ok" name="pwd-ok" class="pwd-button">提交</button>
+                            </div>   
+                        </div>
+                    </div>
+                    <div id="mReviewpage" name="mReviewpage">
+                        <div class="page-block">
+                            <div class="review-block">
+                                <textarea id="review" name="review" autofocus wrap="soft" rows="10" cols="80" placeholder="请在此处将意见反馈给我们，谢谢您的帮助" class="review-text"></textarea>
+                            </div>
+                            <div class="review-block">
+                                <button id="review-ok" name="review-ok" class="review-button">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="Jquery/jquery.js"></script>
+        <script type="text/javascript" src="mcenter.js"></script>
+        <script type="text/javascript" src="mproduct.js"></script>
+        <!-- <script type="text/javascript" src="Bootstrap-Table/src/bootstrap-table.js"></script> -->
+    </body>
